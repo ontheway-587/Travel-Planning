@@ -1,5 +1,5 @@
 1:"$Sreact.fragment"
-2:I[53265,["/_next/static/chunks/3zrf-13ugcljc.js","/_next/static/chunks/2dqcevb-1dl3_.js"],"default"]
-3:I[31479,["/_next/static/chunks/3zrf-13ugcljc.js","/_next/static/chunks/2dqcevb-1dl3_.js"],"default"]
+2:I[53265,["/Travel-Planning/_next/static/chunks/3zrf-13ugcljc.js","/Travel-Planning/_next/static/chunks/2dqcevb-1dl3_.js"],"default"]
+3:I[31479,["/Travel-Planning/_next/static/chunks/3zrf-13ugcljc.js","/Travel-Planning/_next/static/chunks/2dqcevb-1dl3_.js"],"default"]
 4:[]
-0:{"rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"isPartial":false,"staleTime":300,"varyParams":"$W4","buildId":"TUaYI1l4xAoZ5vZJazxN1"}
+0:{"rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"isPartial":false,"staleTime":300,"varyParams":"$W4","buildId":"J5ojGjCbg7LBrrOcnXvus"}
