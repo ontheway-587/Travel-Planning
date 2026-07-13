@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OnTheWay — AI 旅行规划</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      overflow: hidden;
+    }
+    body {
+      background: linear-gradient(135deg, #e8e8e8 0%, #f0f0f0 50%, #e4e4e4 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+      padding: 40px;
+    }
+    .left-panel {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 32px;
+      max-width: 420px;
+    }
+    .left-panel h1 {
+      font-size: 36px;
+      font-weight: 800;
+      color: #1a1a1a;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    .left-panel .subtitle {
+      font-size: 15px;
+      color: #666;
+      line-height: 1.7;
+    }
+    .left-panel .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .left-panel .feature-tag {
+      padding: 6px 14px;
+      border-radius: 20px;
+      background: white;
+      border: 1px solid #e0e0e0;
+      font-size: 12px;
+      color: #555;
+      font-weight: 500;
+    }
+    .left-panel .deploy-btn {
+      margin-top: 8px;
+      padding: 12px 28px;
+      border-radius: 12px;
+      background: #1a1a1a;
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .left-panel .deploy-btn:hover {
+      background: #333;
+      transform: translateY(-1px);
+    }
+    .phone-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      flex-shrink: 0;
+    }
+    .phone-container {
+      position: relative;
+      width: 390px;
+      height: 844px;
+      flex-shrink: 0;
+    }
+    .phone-frame {
+      position: absolute;
+      inset: 0;
+      border-radius: 55px;
+      background: #1a1a1a;
+      box-shadow:
+        0 0 0 2px #333,
+        0 50px 100px -20px rgba(0,0,0,0.25),
+        0 30px 60px -30px rgba(0,0,0,0.3),
+        inset 0 0 0 2px rgba(255,255,255,0.08);
+    }
+    .phone-notch {
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 34px;
+      border-radius: 20px;
+      background: #1a1a1a;
+      z-index: 10;
+    }
+    .phone-screen {
+      position: absolute;
+      inset: 12px;
+      border-radius: 44px;
+      background: white;
+      overflow: hidden;
+    }
+    .phone-screen iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+    .phone-shadow {
+      position: absolute;
+      bottom: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.12);
+      filter: blur(30px);
+    }
+    .phone-buttons {
+      position: absolute;
+      right: -3px;
+      top: 120px;
+      width: 3px;
+      height: 30px;
+      background: #333;
+      border-radius: 0 2px 2px 0;
+    }
+    .phone-buttons::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50px;
+      width: 3px;
+      height: 60px;
+      background: #333;
+      border-radius: 0 2px 2px 0;
+    }
+    .phone-buttons::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 120px;
+      width: 3px;
+      height: 60px;
+      background: #333;
+      border-radius: 0 2px 2px 0;
+    }
+    .nav-tabs { display: none; }
+    .nav-tab { display: none; }
+
+    @media (max-width: 960px) {
+      body {
+        flex-direction: column;
+        gap: 32px;
+        overflow-y: auto;
+        height: auto;
+        min-height: 100vh;
+      }
+      .left-panel {
+        align-items: center;
+        text-align: center;
+      }
+      .phone-container {
+        transform: scale(0.85);
+        transform-origin: top center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="left-panel">
+    <h1>OnTheWay</h1>
+    <p class="subtitle">
+      AI 驱动的智能旅行规划助手。<br>
+      基于真实地理数据与 AI 双引擎，<br>
+      为你从零生成个性化的每日行程方案。
+    </p>
+    <div class="features">
+      <span class="feature-tag">语音输入</span>
+      <span class="feature-tag">路线优化</span>
+      <span class="feature-tag">天气穿搭</span>
+      <span class="feature-tag">预算记账</span>
+      <span class="feature-tag">行前清单</span>
+    </div>
+  </div>
+
+    <div class="phone-wrapper">
+      <div class="phone-container">
+        <div class="phone-frame"></div>
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <iframe id="app-frame" src="/" title="OnTheWay App"></iframe>
+        </div>
+        <div class="phone-shadow"></div>
+        <div class="phone-buttons"></div>
+      </div>
+    </div>
+</body>
+</html>
