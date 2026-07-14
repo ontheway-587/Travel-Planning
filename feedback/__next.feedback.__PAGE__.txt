@@ -3,7 +3,7 @@
 3:I[32852,["/Travel-Planning/_next/static/chunks/3zrf-13ugcljc.js","/Travel-Planning/_next/static/chunks/2dqcevb-1dl3_.js","/Travel-Planning/_next/static/chunks/0lp8apaw2tqe_.js"],"default"]
 6:I[14466,["/Travel-Planning/_next/static/chunks/3zrf-13ugcljc.js","/Travel-Planning/_next/static/chunks/2dqcevb-1dl3_.js"],"OutletBoundary"]
 7:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","script","script-0",{"src":"/Travel-Planning/_next/static/chunks/0lp8apaw2tqe_.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"VKsctNnvCd5TY-GIeqP5Q"}
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","script","script-0",{"src":"/Travel-Planning/_next/static/chunks/0lp8apaw2tqe_.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"yebtIc7GHt_ZlljxR8elx"}
 4:{}
 5:"$0:rsc:props:children:0:props:serverProvidedParams:params"
 8:null
